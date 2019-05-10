@@ -4,7 +4,7 @@
 
 # American Heritage's "Robotics" Summer Camp 2019 
 
-> This is the source code for the summer bot that you will be making durring this course.
+> This is the source code for the summer bot that you will be making during this course.
 
 > You will be learning to use and program with frc components
 
