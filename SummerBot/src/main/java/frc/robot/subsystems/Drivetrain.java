@@ -16,11 +16,11 @@ public class Drivetrain extends Subsystem {
   DifferentialDrive drive;
 
   //These are the RIGHT MOTORS
-  public WPI_TalonSRX rightMaster = new WPI_TalonSRX(Constants.rightMotor);
+  public WPI_VictorSPX rightMaster = new WPI_VictorSPX(Constants.rightMotor);
   // TalonSRX rightFollower = new TalonSRX(Constants.rightFallow);
 
   //Left Motors
-  public WPI_TalonSRX leftMaster = new WPI_TalonSRX(Constants.leftMotor);
+  public WPI_VictorSPX leftMaster = new WPI_VictorSPX(Constants.leftMotor);
   // TalonSRX leftFollower = new TalonSRX(Constants.leftFollow);
 
 
