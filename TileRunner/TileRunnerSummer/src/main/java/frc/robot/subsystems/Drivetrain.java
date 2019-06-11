@@ -43,6 +43,6 @@ public class Drivetrain extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new DriveCommand(OI.throttle,OI.turn));
+    setDefaultCommand(new DriveCommand());
   }
 }
