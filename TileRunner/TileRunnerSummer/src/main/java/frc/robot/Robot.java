@@ -12,27 +12,26 @@ import frc.robot.subsystems.Drivetrain;
 
 public class Robot extends TimedRobot {
 
-  public static OI m_oi;
 
   Command autoCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
-  public static Controls controls;
-  public static Drivetrain drivetrain;
+  public static Controls controls = new Controls();
+  public static Drivetrain drivetrain = new Drivetrain();
 
   //public static Drivetrain drive;
 
   @Override
   public void robotInit() {
     
-    m_oi = new OI();
+
     m_chooser = new SendableChooser<Command>();
     
     m_chooser.setDefaultOption("Default Auto", new DriveCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
 
-    controls = new Controls();
-    drivetrain = new Drivetrain();
+    //controls = new Controls();
+    ///drivetrain = new Drivetrain();
   }
 
 
@@ -77,6 +76,8 @@ public class Robot extends TimedRobot {
     if (autoCommand != null) {
       autoCommand.cancel();
     }
+
+    new DriveCommand().start();
   }
 
   

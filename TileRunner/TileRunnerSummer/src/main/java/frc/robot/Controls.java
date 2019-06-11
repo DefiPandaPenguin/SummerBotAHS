@@ -31,13 +31,13 @@ public class Controls {
 
     //Returns X pos of the left stick
     public double getX() {
-        return joystick.getRawAxis(0);
+        return joystick.getRawAxis(AXIS_LEFT_X);
     }
     //Returns X of the Right Stick
     
     //Returns Y pos of the left stick
     public double getY() {
-        return joystick.getRawAxis(1);
+        return joystick.getRawAxis(AXIS_LEFT_Y);
     }
 
     

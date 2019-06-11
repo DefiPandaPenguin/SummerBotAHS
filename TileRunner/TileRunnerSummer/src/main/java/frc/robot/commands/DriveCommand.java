@@ -1,11 +1,8 @@
 package frc.robot.commands;
 
-import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-import frc.robot.DRIVER;
-import frc.robot.OI;
 import frc.robot.Controls;
 import frc.robot.Robot;
 
@@ -16,7 +13,7 @@ public class DriveCommand extends Command {
     
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    
+    requires(Robot.drivetrain);
   }
 
   // Called just before this Command runs the first time
@@ -29,11 +26,11 @@ public class DriveCommand extends Command {
   protected void execute() {
     //DRIVER.drive.tank(OI.getX, OI.getY);
 
-    double y = -controls.getY();
-    double x = controls.getX();
+    double y = controls.getY();
+    double x = -controls.getX();
 
-    Robot.drivetrain.leftMaster.set(y + x);
-    Robot.drivetrain.rightMaster.set(y - x);
+    Robot.drivetrain.leftMaster.set(x + y);
+    Robot.drivetrain.rightMaster.set(x - y);
   }
 
   // Make this return true when this Command no longer needs to run execute()
