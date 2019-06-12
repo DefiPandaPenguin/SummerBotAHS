@@ -18,6 +18,7 @@ public class Robot extends TimedRobot {
 
   public static Controls controls = new Controls();
   public static Drivetrain drivetrain = new Drivetrain();
+  public static Cameras cameras = new Cameras();
 
   //public static Drivetrain drive;
 
