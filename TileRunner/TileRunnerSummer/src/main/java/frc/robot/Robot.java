@@ -5,8 +5,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.autopaths.Straight;
 import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.autopaths.*;
 
 
 
@@ -14,7 +16,7 @@ public class Robot extends TimedRobot {
 
 
   Command autoCommand;
-  SendableChooser<Command> m_chooser = new SendableChooser<>();
+  SendableChooser<Command> autochooser = new SendableChooser<>();
 
   public static Controls controls = new Controls();
   public static Drivetrain drivetrain = new Drivetrain();
@@ -26,10 +28,10 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     
 
-    m_chooser = new SendableChooser<Command>();
+    autochooser = new SendableChooser<Command>();
     
-    m_chooser.setDefaultOption("Default Auto", new DriveCommand());
-    SmartDashboard.putData("Auto mode", m_chooser);
+    autochooser.setDefaultOption("Drive Striaght", new Straight());
+    SmartDashboard.putData("Auto mode", autochooser);
 
     //controls = new Controls();
     ///drivetrain = new Drivetrain();
@@ -56,8 +58,9 @@ public class Robot extends TimedRobot {
   public void autonomousInit() {
   
     
-    autoCommand = m_chooser.getSelected();
-		autoCommand = (Command) m_chooser.getSelected();
+    autoCommand = autochooser.getSelected();
+    
+    autoCommand.start();
 		
 		if (autoCommand != null) {
 			autoCommand.start();
