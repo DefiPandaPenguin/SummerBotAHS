@@ -1,4 +1,4 @@
-//straight path!
+//another path!
 
 package frc.robot.autopaths;
 import edu.wpi.first.wpilibj.Timer;
@@ -7,7 +7,7 @@ import frc.robot.Robot;
 /**
  * Add your docs here.
  */
-public class Straight extends Command {
+public class another extends Command {
 
     private boolean completed;
     private double starttime;
@@ -17,7 +17,7 @@ public class Straight extends Command {
     }
     public void execute() {
         if(Timer.getFPGATimestamp() - starttime <= 2){
-            Robot.drivetrain.leftMaster.set(-0.5);
+            Robot.drivetrain.leftMaster.set(0.5);
             Robot.drivetrain.rightMaster.set(0.5);
         }else {
             Robot.drivetrain.leftMaster.set(0);

@@ -5,12 +5,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.autopaths.Straight;
 import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.autopaths.*;
-
-
 
 public class Robot extends TimedRobot {
 
@@ -31,6 +28,8 @@ public class Robot extends TimedRobot {
     autochooser = new SendableChooser<Command>();
     
     autochooser.setDefaultOption("Drive Striaght", new Straight());
+    autochooser.addOption("Turn", new Turn());
+    autochooser.addOption("Straight Turn", new StraightTurn());
     SmartDashboard.putData("Auto mode", autochooser);
 
     //controls = new Controls();
